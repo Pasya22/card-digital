@@ -1,0 +1,134 @@
+.container-auth {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card-auth {
+    max-width: 400px;
+    height: fit-content;
+    align-self: center;
+    background-color: var(--card-black);
+    padding: 20px;
+    color: white;
+    border-radius: 8px;
+}
+
+.card-auth .header {
+    width: 100%;
+}
+
+.card-auth .header .title {
+    text-align: center;
+}
+
+.card-auth .header .keterangan {
+    padding-top: 12px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.card-auth .form-box {
+    width: 100%;
+    padding: 0 0 20px;
+}
+
+.card-auth .form-box .lupa {
+    margin-top: 20px;
+    color: var(--secondary-color);
+    font-style: italic;
+    font-size: 14px;
+}
+
+.card-auth .form-box .button {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.card-auth .form-box .button button {
+    width: 100%;
+    padding: 8px 50px;
+    background-color: var(--buttonp-color);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.field-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.form-group {
+    position: relative;
+    margin-top: 20px;
+}
+
+.form-label {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: white;
+    background-color: transparent;
+    z-index: 10;
+    transition: transform 150ms ease-out, font-size 150ms ease-out;
+}
+
+.focused .form-label {
+    transform: translateY(-125%);
+    font-size: .75em;
+}
+
+.form-input {
+    position: relative;
+    padding: 12px 0px 5px 0;
+    width: 100%;
+    outline: 0;
+    border-bottom: 1px solid white !important;
+    box-shadow: 0 1px 0 0 #e5e5e5;
+    transition: box-shadow 150ms ease-out;
+}
+
+.form-input:focus {
+    box-shadow: 0 2px 0 0 var(--buttonp-color);
+}
+
+.form-input.filled {
+    box-shadow: 0 2px 0 0 lightgreen;
+}
+
+.card-auth .footer {
+    width: 100%;
+}
+
+.card-auth .footer .title {
+    text-align: center;
+}
+
+.card-auth .footer .choice {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.card-auth .footer .choice .card i {
+    font-size: 26px;
+    padding: 8px;
+    border-radius: 50%;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.card-auth .footer .keterangan {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.card-auth .footer .keterangan a {
+    color: var(--buttonp-color);
+}

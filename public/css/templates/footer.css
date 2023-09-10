@@ -1,0 +1,12 @@
+footer {
+    width: 100%;
+}
+
+footer .container-footer {
+    max-width: 1200px;
+    background-color: green;
+    margin: 20px auto 0;
+    text-align: center;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}

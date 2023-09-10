@@ -1,0 +1,134 @@
+main .container-register-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+main .container-register-page .register-box {
+    max-width: 1200px;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--white-color);
+    align-self: center;
+    box-shadow: var(--shadow-bottom);
+    border-radius: 20px;
+}
+
+main .container-register-page .register-box .title-box {
+    width: 100%;
+    text-align: center;
+    padding: 20px 20px 0;
+}
+
+main .container-register-page .register-box .title-box h2 {
+    color: green;
+}
+
+main .container-register-page .register-box .register-form {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+main .container-register-page .register-box .register-form .item {
+    width: 100%;
+    display: flex;
+    height: 30px;
+}
+
+main .container-register-page .register-box .register-form .box {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+main .container-register-page .register-box .register-form .box>div {
+    width: calc(100% / 2);
+}
+
+main .container-register-page .register-box .register-form .box.alamat {
+    width: 100%;
+    display: block;
+}
+
+main .container-register-page .register-box .register-form .box>div.alamat {
+    width: 100%;
+}
+
+
+main .container-register-page .register-box .register-form .item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    color: black;
+}
+
+
+main .container-register-page .register-box .register-form .form-group button {
+    width: 100%;
+    height: 35px;
+    background-color: #25a08d;
+    color: white;
+    background-image: none;
+    font-weight: 700;
+    padding: 0 50px;
+    border-radius: 20px;
+    border: 1px solid #25a08d;
+    cursor: pointer;
+}
+
+main .container-register-page .register-box .register-form .reg {
+    border-bottom: 1px solid green;
+}
+
+main .container-register-page .register-box .register-form .reg label a {
+    color: green;
+}
+
+main .container-register-page .register-box .register-form .reg label.text-footer {
+    color: black;
+    text-align: center;
+}
+
+@media only screen and (max-width:960px) {
+    main .container-register-page {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 40px 20px;
+    }
+
+    main .container-register-page .register-box .register-form {
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    main .container-register-page .register-box .register-form .box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    main .container-register-page .register-box .register-form .box>div {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:640px) {
+    main .container-register-page .register-box .register-form .item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+    }
+}

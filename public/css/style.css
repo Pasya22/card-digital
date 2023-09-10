@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+    -ms-tap-highlight-color: rgba(0, 0, 0, 0);
+    -o-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+:root {
+    --body-color: #f8f5f2;
+    --white-color: #fdfdff;
+    --primary-color: #8bd3dd;
+    --secondary-color: #fef6e4;
+    --buttonp-color: #3da9fc;
+    --buttons-color: #abd1c6;
+    --card-black: #2e2e2e;
+    --shadow-bottom: 0 4px 12px rgba(0, 0, 0, .3);
+    --shadow-right: 4px 0px 12px rgba(0, 0, 0, .2);
+    --shadow-left: -4px 0px 12px rgba(0, 0, 0, .2);
+    --content-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+    --small-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px;
+}
+
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+:focus {
+    outline: none;
+}
+
+:invalid,
+:required,
+:valid {
+    border: 0;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+::selection {
+    background: gray;
+    color: #fff;
+}
+
+input:not([type="range"], [type="radio"]),
+textarea,
+select,
+option,
+button {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    border: none;
+    background: none;
+    outline: none;
+    line-height: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+select {
+    background: #fff;
+    color: #111;
+    cursor: pointer;
+}
+
+select option {
+    background-color: #fff;
+    color: black;
+    cursor: pointer;
+}
+
+::placeholder {
+    color: inherit;
+    opacity: 0.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+mark {
+    background: none;
+    color: inherit;
+}
+
+img,
+figure,
+iframe {
+    display: block;
+}
+
+img {
+    color: transparent !important;
+    text-shadow: none !important;
+}
+
+img.cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+ul {
+    list-style: none;
+}
+
+br+br,
+.clear {
+    clear: both;
+}
+
+h1 {
+    font-size: 28px;
+    line-height: 40px;
+}
+
+h2 {
+    font-size: 26px;
+    line-height: 40px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+h4 {
+    font-size: 22px;
+    line-height: 30px;
+}
+
+h5 {
+    font-size: 20px;
+    line-height: 20px;
+}
+
+h6 {
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.ease,
+a {
+    transition: all 250ms ease;
+}
+
+.easeSlow {
+    transition: all 500ms ease;
+}
+
+.easeNone {
+    transition: none;
+}
+
+.m1 {
+    margin: 12px;
+}
+
+.m2 {
+    margin: 20px;
+}
+
+.mt1 {
+    margin-top: 12px;
+}
+
+.mt2 {
+    margin-top: 20px;
+}
+
+.ml1 {
+    margin-left: 12px;
+}
+
+.ml2 {
+    margin-left: 20px;
+}
+
+.mr1 {
+    margin-right: 12px;
+}
+
+.mr2 {
+    margin-right: 20px;
+}
+
+.mb1 {
+    margin-bottom: 12px;
+}
+
+.mb2 {
+    margin-bottom: 20px;
+}
+
+.p1 {
+    padding: 12px;
+}
+
+.p2 {
+    padding: 20px;
+}
+
+.pt1 {
+    padding-top: 12px;
+}
+
+.pt2 {
+    padding-top: 20px;
+}
+
+.pr1 {
+    padding-right: 12px;
+}
+
+.pr2 {
+    padding-right: 20px;
+}
+
+.pl1 {
+    padding-left: 12px;
+}
+
+.pl2 {
+    padding-left: 20px;
+}
+
+.pb1 {
+    padding-bottom: 12px;
+}
+
+.pb2 {
+    padding-bottom: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+body {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    background-color: var(--body-color);
+}
+
+main,
+header {
+    width: 100%;
+}
+
+main .container-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.show {
+    display: block !important;
+}
+
+@media only screen and (max-width:960px) {
+    .m1 {
+        margin: 8px;
+    }
+
+    .m2 {
+        margin: 16px;
+    }
+
+    .mt1 {
+        margin-top: 8px;
+    }
+
+    .mt2 {
+        margin-top: 16px;
+    }
+
+    .ml1 {
+        margin-left: 8px;
+    }
+
+    .ml2 {
+        margin-left: 16px;
+    }
+
+    .mr1 {
+        margin-right: 8px;
+    }
+
+    .mr2 {
+        margin-right: 16px;
+    }
+
+    .mb1 {
+        margin-bottom: 8px;
+    }
+
+    .mb2 {
+        margin-bottom: 16px;
+    }
+
+    .p1 {
+        padding: 8px;
+    }
+
+    .p2 {
+        padding: 16px;
+    }
+
+    .pt1 {
+        padding-top: 8px;
+    }
+
+    .pt2 {
+        padding-top: 16px;
+    }
+
+    .pr1 {
+        padding-right: 8px;
+    }
+
+    .pr2 {
+        padding-right: 16px;
+    }
+
+    .pl1 {
+        padding-left: 8px;
+    }
+
+    .pl2 {
+        padding-left: 16px;
+    }
+
+    .pb1 {
+        padding-bottom: 8px;
+    }
+
+    .pb2 {
+        padding-bottom: 16px;
+    }
+}
+
+@media only screen and (max-width:640px) {
+    .m1 {
+        margin: 8px;
+    }
+
+    .m2 {
+        margin: 12px;
+    }
+
+    .mt1 {
+        margin-top: 8px;
+    }
+
+    .mt2 {
+        margin-top: 12px;
+    }
+
+    .ml1 {
+        margin-left: 8px;
+    }
+
+    .ml2 {
+        margin-left: 12px;
+    }
+
+    .mr1 {
+        margin-right: 8px;
+    }
+
+    .mr2 {
+        margin-right: 12px;
+    }
+
+    .mb1 {
+        margin-bottom: 8px;
+    }
+
+    .mb2 {
+        margin-bottom: 12px;
+    }
+
+    .p1 {
+        padding: 8px;
+    }
+
+    .p2 {
+        padding: 12px;
+    }
+
+    .pt1 {
+        padding-top: 8px;
+    }
+
+    .pt2 {
+        padding-top: 12px;
+    }
+
+    .pr1 {
+        padding-right: 8px;
+    }
+
+    .pr2 {
+        padding-right: 12px;
+    }
+
+    .pl1 {
+        padding-left: 8px;
+    }
+
+    .pl2 {
+        padding-left: 12px;
+    }
+
+    .pb1 {
+        padding-bottom: 8px;
+    }
+
+    .pb2 {
+        padding-bottom: 12px;
+    }
+}
