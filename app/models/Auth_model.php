@@ -26,9 +26,9 @@ class Auth_model extends Controller
 
     public function register($data)
     {
-        // if ($data['password'] != $data['password1']) {
-        //     return false;
-        // }
+        if (isset($data['password']) && isset($data['password1']) && $data['password'] != $data['password1']) {
+            return false;
+        }
 
         // cek apakah no hp mengandung karakter + dan 0-9
         if (!preg_match('/[^+0-9]/', trim($data['no_telepon']))) {
@@ -47,7 +47,7 @@ class Auth_model extends Controller
         $username = $data['username'];
         $nomor = $hp;
 
-        $cek = "SELECT username FROM user WHERE username =:username || no_telepon =:no_telepon ";
+        $cek = "SELECT username FROM login WHERE username =:username || no_telepon =:no_telepon ";
         $this->db->query($cek);
         $this->db->bind('username', $username);
         $this->db->bind('no_telepon', $nomor);
@@ -57,23 +57,20 @@ class Auth_model extends Controller
             return false;
         }
 
-        $password = password_hash($data['password'], PASSWORD_DEFAULT);
-        $query = "INSERT INTO user(nama_lengkap,username,no_telepon,password,nik,kecamatan_id,desa_id,gaptokan,kelompok,alamat)
+        $password = password_hash($data['password1'], PASSWORD_DEFAULT);
+        $query = "INSERT INTO login(username,no_telepon,password,email,role_id,is_active)
                                     VALUES
-                                    (:nama_lengkap, :username, :no_telepon, :password, :nik, :kecamatan_id, :desa_id, :gaptokan, :kelompok, :alamat)
+                                    (:username, :no_telepon, :password, :email,:role_id,:is_active)
                                     ";
 
+
         $this->db->query($query);
-        $this->db->bind('nama_lengkap', $data['nama_lengkap']);
-        $this->db->bind('username', $data['username']);
-        $this->db->bind('no_telepon', $nomor);
+        $this->db->bind('username', $username);
         $this->db->bind('password', $password);
-        $this->db->bind('nik', $data['nik']);
-        $this->db->bind('kecamatan_id', $data['kecamatan_id']);
-        $this->db->bind('desa_id', $data['desa_id']);
-        $this->db->bind('gaptokan', $data['gaptokan']);
-        $this->db->bind('kelompok', $data['kelompok']);
-        $this->db->bind('alamat', $data['alamat']);
+        $this->db->bind('role_id', 2);
+        $this->db->bind('is_active', 1);
+        $this->db->bind('no_telepon', $data['no_telepon']);
+        $this->db->bind('email', $data['email']);
         $this->db->execute();
 
         return $this->db->rowCount();
@@ -81,17 +78,17 @@ class Auth_model extends Controller
 
     public function login($login)
     {
-
+        // $dataP = password_verify($password);
         $username = $login['username'];
         // Ambil data dari database
         $query = "SELECT * FROM login WHERE username = :username || email = :email";
         $this->db->query($query);
         $this->db->bind('username', "$username");
         $this->db->bind('email', "$username");
-        $data =   $this->db->single();
+        $data = $this->db->single();
         if ($this->db->rowCount() > 0) {
             // jika password yang dimasukkan sesuai dengan yg ada di database
-            if ($login['password'] == $data['password']) {
+            if (password_verify($login['password'], $data['password'])) {
                 $_SESSION['user_session'] = $data;
                 return true;
             } else {
@@ -188,8 +185,8 @@ class Auth_model extends Controller
         $ektensiGambar = explode('.', $namaFile);
         $ektensiGambar = strtolower(end($ektensiGambar));
         $namaFileBaru = uniqid();
-        $namaFileBaru  .= '.';
-        $namaFileBaru  .= $ektensiGambar;
+        $namaFileBaru .= '.';
+        $namaFileBaru .= $ektensiGambar;
         if ($error === 4) {
             echo "
                 <script>

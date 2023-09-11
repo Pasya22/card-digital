@@ -1,13 +1,16 @@
 <?php
 if (isset($_SESSION["user_session"])) {
     header("Location:" . BASEURL . "home/index");
-}  
+
+}
+
 ?>
 <main>
     <div class="container-auth">
         <div class="card-auth">
             <div class="header">
                 <div class="title">
+                    <?= Flasher::flash() ?>
                     <h2>Login</h2>
                 </div>
                 <div class="keterangan">
@@ -16,6 +19,7 @@ if (isset($_SESSION["user_session"])) {
             </div>
             <div class="form-box">
                 <form action="<?= BASEURL ?>auth/loginUser" method="post">
+                    <!-- <form action="#" method="post" id="form"> -->
                     <div class="form-group">
                         <label class="form-label" for="username">Username</label>
                         <input name="username" id="username" class="form-input" type="text" />
@@ -29,7 +33,8 @@ if (isset($_SESSION["user_session"])) {
                         <a href="">Lupa Password?</a>
                     </div>
                     <div class="button">
-                        <button>Login</button>
+                        <button type="submit">Login</button>
+                        <!-- <button type="button" class="btn-login">Login</button> -->
                     </div>
                 </form>
             </div>
@@ -39,11 +44,14 @@ if (isset($_SESSION["user_session"])) {
                 </div>
                 <div class="choice">
                     <div class="card">
-                        <i class="fa-brands fa-google fa-flip" style="color: red;"></i>
+                        <a href="<?= BASEURL . 'Google_auth/authenticate' ?>">
+                            <i class="fa-brands fa-google fa-flip" style="color: red;"></i>
+                        </a>
                     </div>
+
                 </div>
                 <div class="keterangan">
-                    <p>Belum Mempunyai Akun ? <a href=""> REGISTER</a></p>
+                    <p>Belum Mempunyai Akun ? <a href="<?= BASEURL ?>auth/register"> REGISTER</a></p>
                 </div>
             </div>
         </div>

@@ -10,39 +10,36 @@
                 </div>
             </div>
             <div class="form-box">
-                <?= Flasher::flash() ?>
-                <form action="<?= BASEURL ?>auth/registerUser" method="post">
+                <form action="" method="post">
                     <div class="form-group">
                         <label class="form-label" for="username">Username</label>
-                        <input name="username" id="username" class="form-input" type="text" />
+                        <input id="username" class="form-input" type="text" />
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="email">Email</label>
-                        <input name="email" id="email" class="form-input" type="email" />
+                        <input id="email" class="form-input" type="email" />
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="telepon">Telepon</label>
-                        <input name="no_telepon" id="telepon" class="form-input" type="text"
-                            onkeypress="return event.charCode >= 48 && event.charCode <=57" required />
-                        <!-- <input name="no_telepon" id="telepon" class="form-input" type="number"
-                            onkeypress="return event.charCode >= 48 && event.charCode <=57" required /> -->
+                        <input id="telepon" class="form-input" type="number" onkeypress="return event.charCode >= 48 && event.charCode <=57" required />
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="password">Password</label>
-                        <input name="password" id="password" class="form-input" type="password" />
+                        <input id="password" class="form-input" type="password" />
                         <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="password1">Konfirmasi password</label>
-                        <input name="password1" id="password1" class="form-input" type="password" />
-                        <span toggle="#password-field"
-                            class="fa fa-fw fa-eye field-icon toggle-konfirmasi-password"></span>
+                        <input id="password1" class="form-input" type="password" />
+                        <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-konfirmasi-password"></span>
+                    </div>
+                    <div class="lupa">
+                        <a href="">Lupa Password?</a>
                     </div>
                     <div class="button">
-                        <button type="submit">REGISTER</button>
+                        <button>REGISTER</button>
                     </div>
                 </form>
-
             </div>
             <div class="footer">
                 <div class="title">
@@ -54,7 +51,7 @@
                     </div>
                 </div>
                 <div class="keterangan">
-                    <p>Sudah Punya Akun? <a href="<?= BASEURL ?>auth/login"> Login</a></p>
+                    <p>Belum Mempunyai Akun ? <a href=""> REGISTER</a></p>
                 </div>
             </div>
         </div>

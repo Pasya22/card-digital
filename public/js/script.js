@@ -19,7 +19,7 @@ $(".toggle-password").click(function() {
 
 $(".toggle-konfirmasi-password").click(function() {
     $(this).toggleClass("fa-eye fa-eye-slash");
-    var input = $('#konfirmasiPassword');
+    var input = $('#password1');
     if (input.attr("type") == "password") {
         input.attr("type", "text");
     } else {

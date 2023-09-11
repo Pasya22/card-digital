@@ -45,7 +45,9 @@ class Auth extends Controller
             header('Location: ' . BASEURL . 'Auth/register');
             exit;
         }
+        
     }
+    
 
     public function loginUser()
     {
@@ -55,7 +57,7 @@ class Auth extends Controller
             exit;
         } else {
             Flasher::setFlash('Username / Password Salah', 'Login', 'Gagal', 'danger');
-            header('Location: ' . BASEURL . 'auth/register');
+            header('Location: ' . BASEURL . 'auth/login');
             exit;
         }
     }
