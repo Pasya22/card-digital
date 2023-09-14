@@ -1,0 +1,92 @@
+#sidebarAdmin {
+    transition: all 2s ease-out;
+}
+
+.container-sidebar-admin {
+    width: 280px;
+    height: 100vh;
+    background-color: var(--primary-color);
+    border-right: 1px solid gray;
+}
+
+.container-sidebar-admin .header {
+    width: 100%;
+    line-height: 80px;
+    padding: 10px 0;
+    border-bottom: 1px solid gray;
+}
+
+.container-sidebar-admin .header img {
+    height: 60px;
+}
+
+.container-sidebar-admin .content {
+    width: 100%;
+    height: 73vh;
+    color: white;
+    border-bottom: 1px solid gray;
+}
+
+.container-sidebar-admin .content ul li {
+    background:
+        linear-gradient(to right,
+            var(--buttonp-color),
+            var(--buttonp-color)),
+        linear-gradient(to right,
+            rgba(255, 0, 0, 1),
+            rgba(255, 0, 180, 1),
+            rgba(0, 100, 200, 1));
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+
+.container-sidebar-admin .content ul li.active {
+    background:
+        linear-gradient(to right,
+            rgba(255, 0, 0, 1),
+            rgba(255, 0, 180, 1),
+            rgba(0, 100, 200, 1)),
+        linear-gradient(to right,
+            rgba(255, 0, 0, 1),
+            rgba(255, 0, 180, 1),
+            rgba(0, 100, 200, 1));
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    animation: glowing 20s linear infinite;
+}
+
+.container-sidebar-admin .content ul li:hover {
+    background-size: 0 3px, 100% 3px;
+}
+
+.container-sidebar-admin .content ul a {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid gray;
+}
+
+.container-sidebar-admin .footer-sidebar {
+    width: 100%;
+    padding: 10px 12px;
+    color: white;
+}
+
+.container-sidebar-admin .footer-sidebar .sosial-media-box ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container-sidebar-admin .footer-sidebar .sosial-media-box ul i {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.container-sidebar-admin .footer-sidebar .keterangan-box {
+    width: 100%;
+    text-align: center;
+}

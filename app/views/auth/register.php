@@ -22,10 +22,10 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="telepon">Telepon</label>
-                        <input name="no_telepon" id="telepon" class="form-input" type="text"
-                            onkeypress="return event.charCode >= 48 && event.charCode <=57" required />
-                        <!-- <input name="no_telepon" id="telepon" class="form-input" type="number"
+                        <!-- <input name="no_telepon" id="telepon" class="form-input" type="text"
                             onkeypress="return event.charCode >= 48 && event.charCode <=57" required /> -->
+                        <input name="no_telepon" id="telepon" class="form-input" type="number"
+                            onkeypress="return event.charCode >= 48 && event.charCode <=57" required />
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="password">Password</label>

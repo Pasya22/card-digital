@@ -1,0 +1,38 @@
+.container-user .container-form {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+}
+
+.container-user .container-form form>div {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.container-user .container-form form>div label {
+    width: 200px;
+    line-height: 36px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.container-user .container-form form>div span {
+    font-size: 20px;
+    line-height: 36px;
+}
+
+.container-user .container-form form>div input {
+    width: calc(100% - 210px);
+    border: 1px solid white;
+    padding: 8px 20px;
+    border-radius: 8px;
+}
+
+.container-user .container-form form>div button {
+    width: 100%;
+    background-color: var(--buttonp-color);
+    padding: 8px;
+    border-radius: 8px;
+}

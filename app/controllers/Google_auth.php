@@ -48,6 +48,7 @@ class Google_auth extends Controller
         $client->addScope('email');
         $client->addScope('profile');
 
+
         $authUrl = $client->createAuthUrl();
 
         if (isset($_GET['code'])) {
@@ -85,6 +86,15 @@ class Google_auth extends Controller
             exit;
         }
         header("Location: " . $authUrl);
+
+        // if ($authUrl === true) {
+        //     $_SESSION['access_token'] = $_GET['code'];
+        //     header('Location: ' . BASEURL . 'home/index');
+        //     exit;
+        // } else {
+        //     header('Location: ' . BASEURL . 'auth/login');
+        //     exit;
+        // }
 
     }
 

@@ -1,0 +1,45 @@
+.container-admin {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.container-content-admin {
+    width: calc(100% - 280px);
+}
+
+.container-dashboard {
+    width: 100%;
+    padding: 20px;
+}
+
+.container-dashboard ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.container-dashboard ul li {
+    width: calc(100% / 2 - 10px);
+}
+
+.container-dashboard ul .item {
+    width: 100%;
+    text-align: center;
+    background-color: var(--card-black);
+    border-radius: 8px;
+    padding: 20px;
+    color: white;
+    box-shadow: var(--content-shadow);
+}
+
+.container-dashboard ul .item .icon i {
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.container-dashboard ul .item .jumlah p {
+    margin-top: 20px;
+    font-size: 26px;
+}

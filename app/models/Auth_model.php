@@ -69,7 +69,7 @@ class Auth_model extends Controller
         $this->db->bind('password', $password);
         $this->db->bind('role_id', 2);
         $this->db->bind('is_active', 1);
-        $this->db->bind('no_telepon', $data['no_telepon']);
+        $this->db->bind('no_telepon', $nomor);
         $this->db->bind('email', $data['email']);
         $this->db->execute();
 
