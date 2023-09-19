@@ -33,7 +33,7 @@ if (!$_SESSION["user_session"]) {
                             <th>No</th>
                             <th>Customer</th>
                             <th>Code TRX</th>
-                            <!-- <th>Code Catalog</th> -->
+                            <th>Catalog</th>
                             <th>Metode Payment</th>
                             <th>Quatity</th>
                             <th>Status</th>
@@ -48,10 +48,24 @@ if (!$_SESSION["user_session"]) {
                                 <td><?= $item['username'] ?></td>
                                 <td><?= $item['kode_trx'] ?></td>
                                 <!-- <td><?= $item['kategori_katalog'] ?></td> -->
-                                <!-- <td><?= $item['id_katalog'] ?></td> -->
+                                <td><?= $item['nama_katalog'] ?></td>
                                 <td><?= $item['metode_trx'] ?></td>
                                 <td><?= $item['jumlah'] ?></td>
-                                <td><?= $item['status_trx'] ?></td>
+                                
+                                <?php 
+                                    if ($item['status_trx'] == 1) {
+                                        echo '<td>PENDING</td>';
+                                    }
+                                    elseif ($item['status_trx'] == 2) {
+                                        echo '<td>BERHASIL</td>';
+                                    }
+                                    elseif ($item['status_trx'] == 3) {
+                                        echo '<td>GAGAL</td>';
+                                    }
+                                    elseif ($item['status_trx'] == 4) {
+                                        echo '<td>REFUND</td>';
+                                    }
+                                ?> 
                                 <td>
                                     <a class="ubah" href="<?= BASEURL . 'Admin/formEditTrx/' . $item['trx_id'] ?>">Edit</a>
                                     <a class="hapus" href="<?= BASEURL . 'Admin/deleteTrx/' . $item['trx_id'] ?>">Delete</a>

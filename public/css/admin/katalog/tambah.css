@@ -1,0 +1,136 @@
+.container-katalog .container-form {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+}
+
+.container-katalog .container-form form>div {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.container-katalog .container-form form>div .gambar-box {
+    display: flex;
+    gap: 20px;
+}
+
+.container-katalog .container-form form>div figure {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-image: url('http://localhost/kartuNama/public/assets/img/image.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: var(--small-shadow);
+}
+
+
+.container-katalog .container-form form>div figure img#preview-selected-image,
+.container-katalog .container-form form>div figure img#preview-selected-image2,
+.container-katalog .container-form form>div figure img#preview-selected-image3,
+.container-katalog .container-form form>div figure img#preview-selected-image4,
+.container-katalog .container-form form>div figure img#preview-selected-image5 {
+    display: none;
+}
+
+.container-katalog .container-form form>div figure img {
+    width: 150px;
+    height: 150px;
+}
+
+.container-katalog .container-form form>div figure label {
+    position: absolute;
+    top: -8px;
+    right: -50px;
+    cursor: pointer;
+}
+
+.container-katalog .container-form form>div figure label i {
+    padding: 4px;
+    border-radius: 50%;
+    box-shadow: var(--small-shadow);
+    font-size: 16px;
+    background-color: white;
+    color: black;
+}
+
+.container-katalog .container-form form>div figure label input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+
+.container-katalog .container-form form>div>label {
+    width: 200px;
+    line-height: 36px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.container-katalog .container-form form>div span {
+    font-size: 20px;
+    line-height: 36px;
+}
+
+.container-katalog .container-form form>div input {
+    width: calc(100% - 210px);
+    border: 1px solid white;
+    padding: 8px 20px;
+    border-radius: 8px;
+}
+
+.container-katalog .container-form form>div.kategori {
+    position: relative;
+}
+
+.container-katalog .container-form form>div select {
+    width: calc(100% - 210px);
+    border: 1px solid white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    background-color: transparent;
+    color: white;
+    appearance: auto;
+    position: relative;
+}
+
+/* .container-katalog .container-form form>div select:after {
+    content: "\f044";
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 70%;
+    width: 30px;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    pointer-events: none;
+    color: black;
+} */
+
+option {
+    line-height: 40px !important;
+    height: 40px !important;
+    background-color: transparent !important;
+    color: black !important;
+    cursor: pointer !important;
+}
+
+.container-katalog .container-form form>div textarea {
+    width: calc(100% - 210px);
+    border: 1px solid white;
+    padding: 8px 20px;
+    border-radius: 8px;
+}
+
+.container-katalog .container-form form>div button {
+    width: 100%;
+    background-color: var(--buttonp-color);
+    padding: 8px;
+    border-radius: 8px;
+}

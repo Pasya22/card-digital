@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="<?= BASEURL ?>css/auth/login.css">
     <link rel="stylesheet" href="<?= BASEURL ?>css/auth/register.css">
     <link rel="stylesheet" href="<?= BASEURL ?>css/admin/dashboard/style.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>css/admin/katalog/katalog.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>css/admin/katalog/tambah.css">
     <link rel="stylesheet" href="<?= BASEURL ?>css/admin/user/style.css">
     <link rel="stylesheet" href="<?= BASEURL ?>css/admin/user/tambah.css">
     <link rel="stylesheet" href="<?= BASEURL ?>css/admin/templates/sidebar.css">

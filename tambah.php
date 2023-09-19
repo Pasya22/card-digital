@@ -1,10 +1,12 @@
-<?php
-if (!$_SESSION["user_session"]) {
-    header("Location:" . BASEURL . "auth/login");
-}
-
+w<?php
+$users = [
+    ["1", "Andra Muhamad", "andram2505@gmail.com", "082438734234", "Admin"],
+    ["2", "Andra Muhamad", "andram2505@gmail.com", "082438734234", "Admin"],
+    ["3", "Andra Muhamad", "andram2505@gmail.com", "082438734234", "Admin"],
+    ["4", "Andra Muhamad", "andram2505@gmail.com", "082438734234", "Admin"],
+    ["5", "Andra Muhamad", "andram2505@gmail.com", "082438734234", "Admin"]
+];
 ?>
-
 <div class="container-admin">
     <?php
     $this->view('admin/templates/sidebar', $data);
@@ -25,9 +27,9 @@ if (!$_SESSION["user_session"]) {
                 <div class="breadcrumb-box">
                     <a href="">Dashboard</a>
                     <p>/</p>
-                    <a href="">Data Catalog</a>
+                    <a href="">data Katalog</a>
                     <p>/</p>
-                    <a href="">Add Data Catalog</a>
+                    <a href="">Tambah Data Katalog</a>
                 </div>
             </div>
             <div class="container-dashboard">
@@ -38,7 +40,7 @@ if (!$_SESSION["user_session"]) {
                         </div>
                     </div>
                     <div class="container-form">
-                        <form action="<?= BASEURL ?>Admin/addkatalog" method="post" enctype='multipart/form-data'>
+                        <form action="">
                             <div class="gambar">
                                 <label for="">gambar</label>
                                 <span>:</span>
@@ -48,8 +50,7 @@ if (!$_SESSION["user_session"]) {
                                         <img id="preview-selected-image">
                                         <label for="gambar" class="lbl-img">
                                             <i class="fa-solid fa-pen-to-square"></i>
-                                            <input name="nama_gambar" type="file" id="gambar" accept="image/*"
-                                                onchange="previewImage(event);">
+                                            <input name="gambar" type="file" id="gambar" accept="image/*" onchange="previewImage(event);">
                                         </label>
                                     </figure>
                                     <figure>
@@ -57,8 +58,7 @@ if (!$_SESSION["user_session"]) {
                                         <img id="preview-selected-image2">
                                         <label for="gambar2" class="lbl-img">
                                             <i class="fa-solid fa-pen-to-square"></i>
-                                            <input name="nama_gambar2" type="file" id="gambar2" accept="image/*"
-                                                onchange="previewImage2(event);">
+                                            <input name="gambar" type="file" id="gambar2" accept="image/*" onchange="previewImage2(event);">
                                         </label>
                                     </figure>
                                     <figure>
@@ -66,8 +66,7 @@ if (!$_SESSION["user_session"]) {
                                         <img id="preview-selected-image3">
                                         <label for="gambar3" class="lbl-img">
                                             <i class="fa-solid fa-pen-to-square"></i>
-                                            <input name="nama_gambar3" type="file" id="gambar3" accept="image/*"
-                                                onchange="previewImage3(event);">
+                                            <input name="gambar3" type="file" id="gambar3" accept="image/*" onchange="previewImage3(event);">
                                         </label>
                                     </figure>
                                     <figure>
@@ -75,8 +74,7 @@ if (!$_SESSION["user_session"]) {
                                         <img id="preview-selected-image4">
                                         <label for="gambar4" class="lbl-img">
                                             <i class="fa-solid fa-pen-to-square"></i>
-                                            <input name="nama_gambar4" type="file" id="gambar4" accept="image/*"
-                                                onchange="previewImage4(event);">
+                                            <input name="gambar" type="file" id="gambar4" accept="image/*" onchange="previewImage4(event);">
                                         </label>
                                     </figure>
                                     <figure>
@@ -84,60 +82,46 @@ if (!$_SESSION["user_session"]) {
                                         <img id="preview-selected-image5">
                                         <label for="gambar5" class="lbl-img">
                                             <i class="fa-solid fa-pen-to-square"></i>
-                                            <input name="nama_gambar5" type="file" id="gambar5" accept="image/*"
-                                                onchange="previewImage5(event);">
+                                            <input name="gambar" type="file" id="gambar5" accept="image/*" onchange="previewImage5(event);">
                                         </label>
                                     </figure>
                                 </div>
                             </div>
                             <div class="nama katalog">
                                 <label for="nama katalog">nama katalog</label>
-                                <span>:</span> 
-                                <input name="nama_katalog" id="nama katalog" type="text"
-                                    placeholder="Masukan nama katalog">
+                                <span>:</span>
+                                <input id="nama katalog" type="text" placeholder="Masukan nama katalog">
                             </div>
                             <div class="harga">
                                 <label for="harga">harga</label>
                                 <span>:</span>
-                                <input name="harga" id="harga" type="text" placeholder="Masukan harga">
-                            </div>
-                            <div class="Category">
-                                <label for="Category">Category</label>
-                                <span>:</span>
-                                <select name="kategori_id" id="kategori_id">
-                                    <option value="">-- Choices Category --</option>
-                                    <?php foreach ($data['kat_show'] as $key) { ?>
-                                        <option value="<?= $key['id_kategori'] ?>">
-                                            <?= $key['nama_kategori'] ?></option>
-                                    <?php } ?>
-
-                                </select>
+                                <input id="harga" type="text" placeholder="Masukan harga">
                             </div>
                             <div class="stok">
                                 <label for="stok">stok</label>
                                 <span>:</span>
-                                <input name="stock" id="stok" type="text" placeholder="Masukan stok">
+                                <input id="stok" type="text" placeholder="Masukan stok">
                             </div>
                             <div class="terjual">
                                 <label for="terjual">terjual</label>
                                 <span>:</span>
-                                <input name="sold" id="terjual" type="text" placeholder="Masukan terjual">
+                                <input id="terjual" type="text" placeholder="Masukan terjual">
                             </div>
-                            <!-- <div class="Kategori">
+                            <div class="Kategori">
                                 <label for="Kategori">Kategori</label>
                                 <span>:</span>
                                 <select name="" id="">
                                     <option value="">Kartu Nama</option>
                                     <option value="">web Profile</option>
                                 </select>
-                            </div> -->
+                            </div>
                             <div class="deskripsi">
                                 <label for="deskripsi">deskripsi</label>
                                 <span>:</span>
-                                <textarea name="deskripsi_katalog" id="deskripsi" cols="30" rows="20"></textarea>
+                                <textarea name="deskripsi" id="deskripsi" cols="30" rows="20"></textarea>
                             </div>
                             <div class="button-box">
-                                <button type="submit" name="submit">Simpan</button>
+                                <button>Simpan</button>
                             </div>
                         </form>
                     </div>

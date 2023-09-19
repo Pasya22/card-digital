@@ -59,18 +59,18 @@ if (!$_SESSION["user_session"]) {
                             </div>
 
                             <div class="katalog_id">
-                                <label for="katalog_id">Type Catalog</label>
+                                <label for="katalog_id">Code Catalog</label>
                                 <span>:</span>
-<!-- 
+
                                 <select name="katalog_id" id="katalog_id">
                                     <option value="">-- Choices Name Catalog --</option>
                                     <?php foreach ($data['trx2'] as $key) { ?>
                                         <option value="<?= $key['katalog_id'] ?>">
-                                            <?= $key['katalog_id'] ?></option>
+                                            <?= $key['nama_katalog'] ?></option>
                                     <?php } ?>
 
-                                </select> -->
-                                <input name="katalog_id" id="katalog_id" type="text" placeholder="Masukan Type Catalog">
+                                </select>
+                                <!-- <input name="katalog_id" id="katalog_id" type="text" placeholder="Masukan Code Catalog"> -->
                                 <!-- <input name="telepon" id="telepon" type="text" placeholder="Masukan No Telepon"> -->
                             </div>
                             <div class="Metode Trx">

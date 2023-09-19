@@ -108,7 +108,7 @@ class Admin extends Controller
     public function formAddKatalog()
     {
         $data['judul'] = 'AddKatalog';
-        // $data['katalog'] = $this->model('admin_model')->getALLKatalog();
+        $data['kat_show'] = $this->model('admin_model')->getALLKategori();
         $this->view('admin/templates/header', $data);
         $this->view('admin/form/formAddKatalog', $data);
         $this->view('admin/templates/footer');
@@ -132,6 +132,7 @@ class Admin extends Controller
     {
         $data['judul'] = 'EditKatalog';
         $data['catalog'] = $this->model('admin_model')->getALLKatalogById($id);
+        $data['catalog2'] = $this->model('admin_model')->getALLKategori();
         $this->view('admin/templates/header', $data);
         $this->view('admin/form/formEditKatalog', $data);
         $this->view('admin/templates/footer');
@@ -194,10 +195,8 @@ class Admin extends Controller
         $data['judul'] = 'EditTrx';
         $data['trx'] = $this->model('admin_model')->getALLTransaksiById($id);
         $this->view('admin/templates/header', $data);
-        $this->view('admin/form/formEditKatalog', $data);
+        $this->view('admin/form/formEditTransaksi', $data);
         $this->view('admin/templates/footer');
-
-
 
     }
     public function editTrx()
@@ -205,11 +204,11 @@ class Admin extends Controller
 
         if ($this->model('admin_model')->trxEdit($_POST) > 0) {
             Flasher::setFlash('', 'Edit Data Katalog', 'Berhasil ', 'success');
-            header('Location: ' . BASEURL . 'Admin/DataKatalog');
+            header('Location: ' . BASEURL . 'Admin/DataTransaksi');
             exit;
         } else {
             Flasher::setFlash('Meng-Edit Data Katalog', 'Gagal ', 'danger');
-            header('Location: ' . BASEURL . 'Admin/formEditKatalog/' . $_POST['katalog_id']);
+            header('Location: ' . BASEURL . 'Admin/formEditTransaksi/' . $_POST['trx_id']);
             exit;
         }
 

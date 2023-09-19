@@ -179,21 +179,30 @@ class admin_model extends Controller
     {
 
         $gambar = $this->model('admin_model')->upload();
-        $data['gambar'] = $gambar;
+        $gambar2 = $this->model('admin_model')->upload2();
+        $gambar3 = $this->model('admin_model')->upload3();
+        $gambar4 = $this->model('admin_model')->upload4();
+        $gambar5 = $this->model('admin_model')->upload5();
 
 
         $query = "INSERT INTO catalog
                                 VALUES
-                                ('', :nama_katalog, :deskripsi_katalog, :gambar, :harga, :stock ,:sold)
+                                ('', :nama_katalog, :deskripsi_katalog, :nama_gambar,:nama_gambar2,:nama_gambar3,:nama_gambar4,:nama_gambar5,:kategori_id, :harga, :stock ,:sold)
                                 ";
 
         $this->db->query($query);
         $this->db->bind('nama_katalog', $data['nama_katalog']);
         $this->db->bind('deskripsi_katalog', $data['deskripsi_katalog']);
-        $this->db->bind('gambar', $data['gambar']);
+        $this->db->bind('nama_gambar', $gambar);
+        $this->db->bind('nama_gambar2', $gambar2);
+        $this->db->bind('nama_gambar3', $gambar3);
+        $this->db->bind('nama_gambar4', $gambar4);
+        $this->db->bind('nama_gambar5', $gambar5);
+        $this->db->bind('kategori_id', $data['kategori_id']);
         $this->db->bind('harga', $data['harga']);
         $this->db->bind('stock', $data['stock']);
         $this->db->bind('sold', $data['sold']);
+
 
         $this->db->execute();
 
@@ -204,46 +213,72 @@ class admin_model extends Controller
 
     public function editDatakatalog($data)
     {
-        // cek apakah no hp mengandung karakter + dan 0-9
-        $gambarLama = htmlspecialchars($data["gambarLama"]);
+        // // $gambarLama1 = htmlspecialchars($data["nama_gambar"]);
+        // // $gambarLama2 = htmlspecialchars($data["nama_gambar2"]);
+        // // $gambarLama3 = htmlspecialchars($data["gambarLama3"]);
+        // // $gambarLama4 = htmlspecialchars($data["gambarLama4"]);
+        // // $gambarLama5 = htmlspecialchars($data["gambarLama5"]);
 
-        if ($_FILES['gambar']['error'] === 4) {
-            $gambar = $gambarLama;
-        } else {
-            $gambar = $this->model('admin_model')->upload();
-        }
-        $data['gambar'] = $gambar;
-
-        // $cek = "SELECT gambar,nama_katalog FROM catalog WHERE (gambar = :gambar OR nama_katalog = :nama_katalog) AND NOT katalog_id =:katalog_id";
-        // $this->db->query($cek);
-        // $this->db->bind('gambar', $gambar);
-        // $this->db->bind('nama_katalog', $data['nama_katalog']);
-        // $this->db->bind('katalog_id', $data['katalog_id']);
-        // $this->db->execute();
-        // $ceks = $this->db->rowCount();
-        // if ($ceks > 0) {
-        //     return false;
+        // if ($_FILES['nama_gambar']['error'] === 4) {
+        //     $gambar1 = $gambarLama1;
+        // } else {
+        //     $gambar1 = $this->model('admin_model')->upload1();
+        // }
+        // if ($_FILES['nama_gambar2']['error'] === 4) {
+        //     $gambar2 = $gambarLama2;
+        // } else {
+        //     $gambar2 = $this->model('admin_model')->upload2();
+        // }
+        // if ($_FILES['nama_gambar3']['error'] === 4) {
+        //     $gambar3 = $gambarLama3;
+        // } else {
+        //     $gambar3 = $this->model('admin_model')->upload3();
+        // }
+        // if ($_FILES['nama_gambar4']['error'] === 4) {
+        //     $gambar4 = $gambarLama4;
+        // } else {
+        //     $gambar4 = $this->model('admin_model')->upload4();
+        // }
+        // if ($_FILES['nama_gambar5']['error'] === 4) {
+        //     $gambar5 = $gambarLama5;
+        // } else {
+        //     $gambar5 = $this->model('admin_model')->upload5();
         // }
 
-        $query = "UPDATE catalog SET
-                    gambar = :gambar,
+        $gambar1 = $this->model('admin_model')->upload();
+        $gambar2 = $this->model('admin_model')->upload2();
+        $gambar3 = $this->model('admin_model')->upload3();
+        $gambar4 = $this->model('admin_model')->upload4();
+        $gambar5 = $this->model('admin_model')->upload5();
+
+        $query = "UPDATE catalog SET 
                     nama_katalog = :nama_katalog,
-                    harga = :harga,  
                     deskripsi_katalog = :deskripsi_katalog,
+                    nama_gambar = :nama_gambar,
+                    nama_gambar2 = :nama_gambar2,
+                    nama_gambar3 = :nama_gambar3,
+                    nama_gambar4 = :nama_gambar4,
+                    nama_gambar5 = :nama_gambar5,
+                    kategori_id = :kategori_id,
+                    harga = :harga,  
                     stock = :stock,
-                    sold = :sold,
+                    sold = :sold
                     WHERE katalog_id = :katalog_id";
 
         $this->db->query($query);
 
-        $this->db->bind('gambar', $gambar);
+        $this->db->bind('katalog_id', $data['katalog_id']);
         $this->db->bind('nama_katalog', $data['nama_katalog']);
+        $this->db->bind('deskripsi_katalog', $data['deskripsi_katalog']);
+        $this->db->bind('nama_gambar', $gambar1);
+        $this->db->bind('nama_gambar2', $gambar2);
+        $this->db->bind('nama_gambar3', $gambar3);
+        $this->db->bind('nama_gambar4', $gambar4);
+        $this->db->bind('nama_gambar5', $gambar5);
+        $this->db->bind('kategori_id', $data['kategori_id']);
         $this->db->bind('harga', $data['harga']);
         $this->db->bind('stock', $data['stock']);
         $this->db->bind('sold', $data['sold']);
-        $this->db->bind('deskripsi_katalog', $data['deskripsi_katalog']);
-        $this->db->bind('katalog_id', $data['katalog_id']);
-
 
         $this->db->execute();
         return $this->db->rowCount();
@@ -277,9 +312,10 @@ class admin_model extends Controller
     }
     public function getALLTransaksiJoin()
     {
-        $this->db->query('SELECT transaksi.*, login.username 
+        $this->db->query('SELECT transaksi.*,catalog.nama_katalog,login.username 
                          FROM transaksi
                          JOIN login ON transaksi.id_user = login.id_user
+                         JOIN catalog ON transaksi.katalog_id = catalog.katalog_id
                          ORDER BY transaksi.trx_id DESC');
         return $this->db->resultSet();
     }
@@ -290,13 +326,13 @@ class admin_model extends Controller
 
         $query = "INSERT INTO transaksi
                                 VALUES
-                                ('',:katalog_id ,:id_user, :kode_trx, :metode_trx, :jumlah,:status_trx)
+                                ('',:kode_trx,:id_user,:katalog_id, :metode_trx, :jumlah,:status_trx)
                                 ";
 
         $this->db->query($query);
-        $this->db->bind('katalog_id', $data['katalog_id']);
         $this->db->bind('id_user', $data['id_user']);
         $this->db->bind('kode_trx', $data['kode_trx']);
+        $this->db->bind('katalog_id', $data['katalog_id']);
         $this->db->bind('metode_trx', $data['metode_trx']);
         $this->db->bind('jumlah', $data['jumlah']);
         $this->db->bind('status_trx', $data['status_trx']);
@@ -315,16 +351,17 @@ class admin_model extends Controller
     // Edit Data Trasaksi=========================--------------------------///
     public function trxEdit($data)
     {
-
-
+       
         $query = "UPDATE transaksi SET
-                    katalog_id = :katalog_id,
-                    id_user = :id_user,
                     kode_trx = :kode_trx,
+                    id_user = :id_user,
+                    katalog_id = :katalog_id,
                     metode_trx = :metode_trx,
                     jumlah = :jumlah,
                     status_trx = :status_trx
                     WHERE trx_id = :trx_id";
+ var_dump($data);
+ die;
 
         $this->db->query($query);
 
@@ -363,10 +400,18 @@ class admin_model extends Controller
     // Data kategori============----------
     public function getALLKategori()
     {
-        $this->db->query('SELECT nama_kategori FROM ' . $this->table4 . ' ORDER BY id_kategori DESC');
+        $this->db->query('SELECT * FROM ' . $this->table4 . ' ORDER BY id_kategori DESC');
         return $this->db->resultSet();
     }
 
+
+    public function getALLKategoriById($id)
+    {
+        $this->db->query('SELECT * FROM ' . $this->table4 . ' WHERE id_kategori = :id_kategori ORDER BY id_kategori DESC');
+        $this->db->bind('id_kategori', $id);
+        return $this->db->single();
+
+    }
     // Add Data Trasaksi=========================--------------------------///
 
     // END Add Data Trasaksi=========================--------------------------///
@@ -381,11 +426,17 @@ class admin_model extends Controller
 
     // END TRANSAKSI    //--------------------------------------------------------------------
 
+
+    // end data katalog==============--------------------------------------------------///
+
+
+    // DATA TRANSAKSI===================---------------------------
+
     public function upload()
     {
-        $namaFile = $_FILES['gambar']['name'];
-        $error = $_FILES['gambar']['error'];
-        $tmpName = $_FILES['gambar']['tmp_name'];
+        $namaFile = $_FILES['nama_gambar']['name'];
+        $error = $_FILES['nama_gambar']['error'];
+        $tmpName = $_FILES['nama_gambar']['tmp_name'];
         $ektensiGambarValid = ['jpg', 'jpeg', 'png', 'webp', 'enc'];
         $ektensiGambar = explode('.', $namaFile);
         $ektensiGambar = strtolower(end($ektensiGambar));
@@ -413,11 +464,133 @@ class admin_model extends Controller
 
         return $namaFileBaru;
     }
+    public function upload2()
+    {
+        $namaFile = $_FILES['nama_gambar2']['name'];
+        $error = $_FILES['nama_gambar2']['error'];
+        $tmpName = $_FILES['nama_gambar2']['tmp_name'];
+        $ektensiGambarValid = ['jpg', 'jpeg', 'png', 'webp', 'enc'];
+        $ektensiGambar = explode('.', $namaFile);
+        $ektensiGambar = strtolower(end($ektensiGambar));
+        $namaFileBaru2 = uniqid();
+        $namaFileBaru2 .= '.';
+        $namaFileBaru2 .= $ektensiGambar;
+        if ($error === 4) {
+            echo "
+                <script>
+                    alert('Pilih gambar terlebih dahulu!');
+                </script>";
+            return false;
+        }
 
-    // end data katalog==============--------------------------------------------------///
+        if (!in_array($ektensiGambar, $ektensiGambarValid)) {
+            echo "
+                <script>
+                    alert('yang anda upload bukan gambar');
+                </script>";
+            return false;
+        }
 
 
-    // DATA TRANSAKSI===================---------------------------
+        move_uploaded_file($tmpName, 'assets/img/user/' . $namaFileBaru2);
 
+        return $namaFileBaru2;
+    }
+    public function upload3()
+    {
+        $namaFile = $_FILES['nama_gambar3']['name'];
+        $error = $_FILES['nama_gambar3']['error'];
+        $tmpName = $_FILES['nama_gambar3']['tmp_name'];
+        $ektensiGambarValid = ['jpg', 'jpeg', 'png', 'webp', 'enc'];
+        $ektensiGambar = explode('.', $namaFile);
+        $ektensiGambar = strtolower(end($ektensiGambar));
+        $namaFileBaru3 = uniqid();
+        $namaFileBaru3 .= '.';
+        $namaFileBaru3 .= $ektensiGambar;
+        if ($error === 4) {
+            echo "
+                <script>
+                    alert('Pilih gambar terlebih dahulu!');
+                </script>";
+            return false;
+        }
+
+        if (!in_array($ektensiGambar, $ektensiGambarValid)) {
+            echo "
+                <script>
+                    alert('yang anda upload bukan gambar');
+                </script>";
+            return false;
+        }
+
+
+        move_uploaded_file($tmpName, 'assets/img/user/' . $namaFileBaru3);
+
+        return $namaFileBaru3;
+    }
+    public function upload4()
+    {
+        $namaFile = $_FILES['nama_gambar4']['name'];
+        $error = $_FILES['nama_gambar4']['error'];
+        $tmpName = $_FILES['nama_gambar4']['tmp_name'];
+        $ektensiGambarValid = ['jpg', 'jpeg', 'png', 'webp', 'enc'];
+        $ektensiGambar = explode('.', $namaFile);
+        $ektensiGambar = strtolower(end($ektensiGambar));
+        $namaFileBaru4 = uniqid();
+        $namaFileBaru4 .= '.';
+        $namaFileBaru4 .= $ektensiGambar;
+        if ($error === 4) {
+            echo "
+                <script>
+                    alert('Pilih gambar terlebih dahulu!');
+                </script>";
+            return false;
+        }
+
+        if (!in_array($ektensiGambar, $ektensiGambarValid)) {
+            echo "
+                <script>
+                    alert('yang anda upload bukan gambar');
+                </script>";
+            return false;
+        }
+
+
+        move_uploaded_file($tmpName, 'assets/img/user/' . $namaFileBaru4);
+
+        return $namaFileBaru4;
+    }
+    public function upload5()
+    {
+        $namaFile = $_FILES['nama_gambar5']['name'];
+        $error = $_FILES['nama_gambar5']['error'];
+        $tmpName = $_FILES['nama_gambar5']['tmp_name'];
+        $ektensiGambarValid = ['jpg', 'jpeg', 'png', 'webp', 'enc'];
+        $ektensiGambar = explode('.', $namaFile);
+        $ektensiGambar = strtolower(end($ektensiGambar));
+        $namaFileBaru5 = uniqid();
+        $namaFileBaru5 .= '.';
+        $namaFileBaru5 .= $ektensiGambar;
+        if ($error === 4) {
+            echo "
+                <script>
+                    alert('Pilih gambar terlebih dahulu!');
+                </script>";
+            return false;
+        }
+
+        if (!in_array($ektensiGambar, $ektensiGambarValid)) {
+            echo "
+                <script>
+                    alert('yang anda upload bukan gambar');
+                </script>";
+            return false;
+        }
+
+
+        move_uploaded_file($tmpName, 'assets/img/user/' . $namaFileBaru5);
+
+        return $namaFileBaru5;
+    }
 
 }

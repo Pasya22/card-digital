@@ -1,0 +1,113 @@
+.container-katalog {
+    width: 100%;
+}
+
+.container-katalog .header {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    height: 60px;
+    line-height: 60px;
+}
+
+.container-katalog .header>div {
+    text-align: center;
+    padding: 0 20px;
+    line-height: 60px;
+    color: white;
+}
+
+.container-katalog .header>div h1 {
+    line-height: 60px;
+    text-align: start;
+}
+
+.container-katalog .header>div input {
+    width: 300px;
+    border: 1px solid gray;
+    height: 30px;
+    padding: 8px 20px;
+}
+
+.container-katalog .header>div.pencarian i {
+    padding: 8px 20px;
+    background-color: gray;
+    border: 1px solid gray;
+    height: 30px;
+    margin-left: -5px;
+}
+
+.container-katalog .header>div.tambah {
+    padding: 12.5px 20px;
+}
+
+.container-katalog .header>div.tambah a {
+    display: block;
+    padding: 0 40px;
+    background-color: var(--buttonp-color);
+    height: 35px;
+    line-height: 35px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: var(--small-shadow);
+}
+
+.container-katalog table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.container-katalog table tr {
+    width: 100%;
+
+}
+
+.container-katalog table tr:nth-child(even) {
+    width: 100%;
+    background-color: rgb(224, 224, 224);
+}
+
+.container-katalog table tr th {
+    text-align: center;
+    padding: 8px;
+    line-height: 30px;
+    border: 1px solid gray;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.container-katalog table tr td {
+    text-align: center;
+    padding: 8px;
+    line-height: 30px;
+    border: 1px solid gray;
+}
+
+.container-katalog table tr td.image {
+    text-align: center;
+}
+
+.container-katalog table tr td.image img {
+    margin: 0 auto;
+    height: 80px;
+    width: 80px;
+}
+
+.container-katalog table tr td:last-child a.ubah {
+    background-color: orange;
+    padding: 6px 20px;
+    margin-right: 20px;
+    color: white;
+    border-radius: 8px;
+    box-shadow: var(--small-shadow);
+}
+
+.container-katalog table tr td:last-child a.hapus {
+    background-color: red;
+    padding: 6px 20px;
+    color: white;
+    border-radius: 8px;
+    box-shadow: var(--small-shadow);
+}
